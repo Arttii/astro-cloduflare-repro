@@ -1,0 +1,6 @@
+name = "example"
+compatibility_flags = [ "nodejs_compat" ]
+
+
+[vars]
+ 

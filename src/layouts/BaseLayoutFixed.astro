@@ -1,0 +1,34 @@
+---
+import '~/assets/styles/base.css';
+
+import BasicScripts from '~/components/core/BasicScripts.astro';
+import MetaTags from '~/components/core/MetaTags.astro';
+
+const { meta = {} } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="daisy" class="motion-safe:scroll-smooth 2xl:text-[20px] overflow-hidden">
+  <head>
+    <MetaTags {...meta} />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+  </head>
+ 
+
+  <body class="antialiased text-gray-900 tracking-tight bg-background">
+    <slot />
+
+    <BasicScripts />
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+  <script>
+    // import { router } from '~/stores/router';
+    // router.subscribe(() => {
+    //   console.log(`Hi, ${router}`);
+    // });
+  </script>
+</html>

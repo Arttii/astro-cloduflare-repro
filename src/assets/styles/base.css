@@ -1,0 +1,100 @@
+@tailwind base;
+
+@tailwind components;
+@tailwind utilities;
+
+/* @layer components {
+	.btn {
+		@apply inline-flex items-center justify-center rounded border border-transparent font-medium text-center text-base leading-snug transition py-3 px-6 shadow-lg ease-in duration-200     focus:ring-2 focus:ring-offset-2;
+	}
+}  */
+
+@layer utilities {
+  /* Gradient color */
+  .gradient-purple-pink-red {
+    @apply bg-gradient-to-r;
+    @apply from-gray-100   to-gray-900;
+  }
+
+  .side-button {
+    @apply active:btn-primary focus:btn-primary hover:btn-primary hover:text-white  active:text-white focus:text-white;
+  }
+  .bg-predawn {
+    @apply bg-[#F18260];
+  }
+  .center-this {
+    @apply content-center justify-center items-center;
+  }
+
+  /* ... */
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+button {
+  --tw-ring-shadow: 0 0 #000 !important;
+  --tw-ring-offset-shadow: 0 0 #000 !important;
+}
+input::placeholder,
+textarea::placeholder {
+  @apply text-gray-950;
+  opacity: 1;
+}
+
+input {
+  --tw-ring-shadow: 0 0 #000 !important;
+  --tw-ring-offset-shadow: 0 0 #000 !important;
+}
+
+*,
+::before,
+::after {
+  --tw-ring-color: 0 0 #000 !important;
+  --tw-ring-shadow: 0 0 #000 !important;
+  --tw-ring-offset-shadow: 0 0 #000 !important;
+}
+
+[type='text'] {
+  --tw-ring-color: 0 0 #000 !important;
+  --tw-ring-shadow: 0 0 #000 !important;
+  --tw-ring-offset-shadow: 0 0 #000 !important;
+}
+.fieldset {
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 10px;
+  z-index: 0;
+}
+
+.fieldset h1 {
+  position: absolute;
+  top: 0;
+  font-size: 18px;
+  line-height: 1;
+  margin: -9px 0 0; /* half of font-size */
+  background: #fff;
+  padding: 0 3px;
+  z-index: 5;
+}
+
+.item-hover {
+  @apply rounded-none transition hover:-translate-y-2 hover:border-x-2   hover:border-t-2 hover:border-dashed hover:shadow-[0px_2px_0px_0px_#000];
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Class for element with animation */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

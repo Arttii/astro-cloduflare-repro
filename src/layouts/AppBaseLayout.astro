@@ -1,0 +1,61 @@
+---
+ 
+import Layout from '~/layouts/BaseLayoutFixed.astro';
+
+ 
+import { useUserAgent } from 'astro-useragent';
+
+const uaString = Astro.request.headers.get('user-agent');
+const { source, isMobile } = useUserAgent(uaString);
+
+const { meta } = Astro.props;
+---
+{isMobile ?<Layout meta={meta}>
+  <div class="p-1 m-0 container mx-auto w-full   h-full ">
+    <div class="lg:mx-0 mx-1 rounded-lg h-full">
+			<main class="flex flex-col h-full ">
+        
+        <slot name="header" />
+      
+       
+        <div class="h-full  ">
+       
+          <slot />
+
+         
+        </div>
+				<slot name="footer" />
+      </main>
+    </div>
+  </div>
+</Layout> : <Layout meta={meta}>
+  <div class="p-0 m-0   mx-auto w-full   h-full  ">
+    <div class="lg:mx-0 mx-1 rounded-lg  h-full">
+      <main class="flex flex-col h-full ">
+        
+			 
+        <slot name="header" /> 
+		  
+        
+        <div class="  h-full  ">
+         
+          <slot />
+
+          
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>
+}
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/eruda" is:inline></script>
+<script is:inline>let el = document.createElement('div');
+	document.body.appendChild(el);
+	
+	eruda.init({
+			container: el,
+			tool: ['console', 'elements']
+	});</script> -->
+
+

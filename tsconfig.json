@@ -1,0 +1,19 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "jsxImportSource": "react",
+    "types": [
+      "astro/client"
+    ],
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ],
+    }
+  }
+}
